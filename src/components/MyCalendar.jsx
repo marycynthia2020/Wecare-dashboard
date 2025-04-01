@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/style.css";
+import { useState } from "react";
+import { MdOutlineMeetingRoom } from "react-icons/md";
 
 function MyCalendar() {
-  const [date, setDate] = useState(new Date());
-
-  const tileClassName = ({ date, view }) => {
-    if (view === 'month' && date.getDate() === 15) {
-      return 'text-red-500 text-xl';
-    }
-    return null;
-  };
+  const [selected, setSelected] = useState();
 
   return (
-    <div>
-      <Calendar
-        onChange={setDate}
-        value={date}
-        tileClassName={tileClassName}
-        className="h-ful w-full"
+    <div className="flex flex-col gap-4">
+      <div>
+        <div className="flex items-center gap-2 px-8">
+          <div className="w-6 h-6 rounded-full flex items-center justify-center text-xl text-[#67b2f3]">
+            <MdOutlineMeetingRoom />
+          </div>
+          <p>Calendar</p>
+        </div>
+      </div>
+
+      <DayPicker
+        animate
+        mode="single"
+        selected={selected}
+        onSelect={setSelected}
+        footer={selected ? `Selected: ${selected.toLocaleDateString()}` : ""}
       />
     </div>
   );
