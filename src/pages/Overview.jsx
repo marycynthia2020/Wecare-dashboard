@@ -2,7 +2,8 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { HiOutlineArrowUpTray } from "react-icons/hi2";
 import { ChartCard, GreenCard, RoomCard, SurgeryCard } from "../components/Cards";
 import BarCharts from "../components/BarCharts";
-// import Calendar from "../components/Calendarjsx";
+import MyCalendar from "../components/MyCalendar";
+
 const Overview = () => {
   return (
     <div className="px-8">
@@ -32,7 +33,7 @@ const Overview = () => {
       </div>
       <div className="grid grid-cols-2 gap-4">
             <BarCharts />
-            {/* <Calendar /> */}
+            <MyCalendar className="border-none"  />
       </div>
      
 
