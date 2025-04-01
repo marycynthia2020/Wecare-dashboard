@@ -48,7 +48,7 @@ const data = [
   },
   {
     name: "Sunday",
-    patients: 2800,
+    patients: 280,
     inpatients: 100,
     amt: 2100,
   },
@@ -67,7 +67,7 @@ export default function BarCharts() {
         }}
       >
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis  domain={[50, 800]} ticks={[50, 100, 300, 500, 800]}/>
         <Legend />
         <Bar
           dataKey="patients"
